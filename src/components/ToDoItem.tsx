@@ -3,9 +3,10 @@ const ToDoItem: React.FC<{
   text: string;
   dateAdded: string;
   deadline: string;
+  onRemoveToDo: () => void;
 }> = (props) => {
   return (
-    <li>
+    <li onClick={props.onRemoveToDo}>
       <p>{props.id}</p>
       <p>{props.text}</p>
       <p>Date Added: {props.dateAdded}</p>

@@ -1,19 +1,14 @@
-import React from "react";
-import ToDos from "./components/ToDos";
-import ToDo from "./models/todo";
 import NewToDo from "./components/NewToDo";
+import ToDos from "./components/ToDos";
+
+import ToDosContextProvider from "./store/toDos-context";
 
 function App() {
-  const items = [
-    new ToDo("Learn React", "15-7-2023"),
-    new ToDo("Learn TypeScript", "15-7-2023"),
-  ];
-
   return (
-    <div className="App">
+    <ToDosContextProvider>
       <NewToDo />
-      <ToDos itemList={items} />
-    </div>
+      <ToDos />
+    </ToDosContextProvider>
   );
 }
 

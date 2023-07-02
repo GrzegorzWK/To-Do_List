@@ -1,6 +1,9 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import { ToDosContext } from "../store/toDos-context";
 
 const NewToDo: React.FC = () => {
+  const toDosCtx = useContext(ToDosContext);
+
   const toDoTextInputRef = useRef<HTMLInputElement>(null);
   const toDoDeadlineInputRef = useRef<HTMLInputElement>(null);
 
@@ -17,11 +20,11 @@ const NewToDo: React.FC = () => {
       //throw an error
       return alert("To Do Text and To Do Deadline cannot be blank");
     }
-    
-    console.log(enteredText, enteredDeadline);
 
-    toDoTextInputRef.current!.value = "";
-    toDoDeadlineInputRef.current!.value = "";
+    toDosCtx.addToDo(enteredText, enteredDeadline);
+
+    // toDoTextInputRef.current!.value = "";
+    // toDoDeadlineInputRef.current!.value = "";
   };
 
   return (

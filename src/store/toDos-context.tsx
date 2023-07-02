@@ -23,8 +23,12 @@ const ToDosContextProvider: React.FC = (props) => {
       return prevToDos.concat(newToDo);
     });
   };
-  
-  const removerToDoHandler = () => {};
+
+  const removerToDoHandler = (toDoId: string) => {
+    setToDos((prevToDos) => {
+      return prevToDos.filter((toDo) => toDo.id !== toDoId);
+    });
+  };
 
   const contextValue: ToDosContextObj = {
     items: toDos,

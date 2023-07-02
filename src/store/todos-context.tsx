@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import ToDo from "../models/todo";
 
 type ToDosContextObj = {
-  item: ToDo[];
+  items: ToDo[];
   addToDo: (text: string, deadline: string) => void;
   removeToDo: (id: string) => void;
 };
 
 export const ToDosContext = React.createContext<ToDosContextObj>({
-  item: [],
+  items: [],
   addToDo: () => {},
   removeToDo: (id: string) => {},
 });
@@ -16,11 +16,18 @@ export const ToDosContext = React.createContext<ToDosContextObj>({
 const ToDosContextProvider: React.FC = (props) => {
   const [toDos, setToDos] = useState<ToDo[]>([]);
 
-  const addToDoHandler = () => {};
+  const addToDoHandler = (toDoText: string, toDoDeadline: string) => {
+    const newToDo = new ToDo(toDoText, toDoDeadline);
+
+    setToDos((prevToDos) => {
+      return prevToDos.concat(newToDo);
+    });
+  };
+  
   const removerToDoHandler = () => {};
 
   const contextValue: ToDosContextObj = {
-    item: toDos,
+    items: toDos,
     addToDo: addToDoHandler,
     removeToDo: removerToDoHandler,
   };

@@ -23,8 +23,8 @@ const NewToDo: React.FC = () => {
 
     toDosCtx.addToDo(enteredText, enteredDeadline);
 
-    // toDoTextInputRef.current!.value = "";
-    // toDoDeadlineInputRef.current!.value = "";
+    toDoTextInputRef.current!.value = "";
+    toDoDeadlineInputRef.current!.value = "";
   };
 
   return (

@@ -1,3 +1,4 @@
+import { PropsWithChildren } from 'react';
 import React, { useState } from "react";
 import ToDo from "../models/todo";
 
@@ -9,11 +10,11 @@ type ToDosContextObj = {
 
 export const ToDosContext = React.createContext<ToDosContextObj>({
   items: [],
-  addToDo: () => {},
+  addToDo: (text: string, deadline: string) => {},
   removeToDo: (id: string) => {},
 });
 
-const ToDosContextProvider: React.FC = (props) => {
+const ToDosContextProvider: React.FC<PropsWithChildren> = (props) => {
   const [toDos, setToDos] = useState<ToDo[]>([]);
 
   const addToDoHandler = (toDoText: string, toDoDeadline: string) => {

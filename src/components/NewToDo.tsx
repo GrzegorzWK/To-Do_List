@@ -10,6 +10,14 @@ const NewToDo: React.FC = () => {
     const enteredText = toDoTextInputRef.current!.value;
     const enteredDeadline = toDoDeadlineInputRef.current!.value;
 
+    if (
+      enteredText.trim().length === 0 ||
+      enteredDeadline.trim().length === 0
+    ) {
+      //throw an error
+      return alert("To Do Text and To Do Deadline cannot be blank");
+    }
+    
     console.log(enteredText, enteredDeadline);
 
     toDoTextInputRef.current!.value = "";

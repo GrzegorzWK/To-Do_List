@@ -2,9 +2,12 @@ class Todo {
   id: string;
   text: string;
   dateAdded: string;
+  deadline: string;
 
-  constructor(todoText: string) {
+  constructor(todoText: string, toDoDeadline: string) {
     this.text = todoText;
+    this.deadline = toDoDeadline;
+
     this.id = new Date().toISOString();
 
     const dateObj = new Date();

@@ -4,7 +4,10 @@ import Todo from "./models/todo";
 import NewTodo from "./components/NewTodo";
 
 function App() {
-  const items = [new Todo("Learn React"), new Todo("Learn TypeScript")];
+  const items = [
+    new Todo("Learn React", "15-7-2023"),
+    new Todo("Learn TypeScript", "15-7-2023"),
+  ];
 
   return (
     <div className="App">

@@ -1,7 +1,8 @@
 const NewTodo: React.FC = () => {
-  const submitHandler = () => {
+  const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
   };
+
   return (
     <form onSubmit={submitHandler}>
       <label>To Do Text</label>

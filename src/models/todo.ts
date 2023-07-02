@@ -1,4 +1,4 @@
-class Todo {
+class ToDo {
   id: string;
   text: string;
   dateAdded: string;
@@ -19,4 +19,4 @@ class Todo {
   }
 }
 
-export default Todo;
+export default ToDo;

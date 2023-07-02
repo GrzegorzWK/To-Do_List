@@ -1,4 +1,4 @@
-const NewTodo: React.FC = () => {
+const NewToDo: React.FC = () => {
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
   };
@@ -14,4 +14,4 @@ const NewTodo: React.FC = () => {
   );
 };
 
-export default NewTodo;
+export default NewToDo;

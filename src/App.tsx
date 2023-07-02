@@ -1,17 +1,17 @@
 import React from "react";
 import ToDos from "./components/ToDos";
-import Todo from "./models/todo";
-import NewTodo from "./components/NewTodo";
+import ToDo from "./models/todo";
+import NewToDo from "./components/NewToDo";
 
 function App() {
   const items = [
-    new Todo("Learn React", "15-7-2023"),
-    new Todo("Learn TypeScript", "15-7-2023"),
+    new ToDo("Learn React", "15-7-2023"),
+    new ToDo("Learn TypeScript", "15-7-2023"),
   ];
 
   return (
     <div className="App">
-      <NewTodo />
+      <NewToDo />
       <ToDos itemList={items} />
     </div>
   );

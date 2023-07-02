@@ -8,7 +8,7 @@ class ToDo {
     this.text = todoText;
     this.deadline = toDoDeadline;
 
-    this.id = new Date().toISOString();
+    this.id = new Date().toISOString() + Math.random();
 
     const dateObj = new Date();
     const month = dateObj.getUTCMonth() + 1;

@@ -7,6 +7,7 @@ const ToDos: React.FC<{ itemList: Todo[] }> = (props) => {
       {props.itemList.map((item) => (
         <ToDoItem
           key={item.id}
+          id={item.id}
           text={item.text}
           dateAdded={item.dateAdded}
           deadline={item.deadline}

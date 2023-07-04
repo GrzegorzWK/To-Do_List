@@ -9,7 +9,7 @@ const ToDoItem: React.FC<{
 }> = (props) => {
   return (
     <li onClick={props.onRemoveToDo} className={classes.item}>
-      {/* <p>{props.id}</p> */}
+      <p>Task title:</p>
       <p>{props.text}</p>
       <p>Date Added: {props.dateAdded}</p>
       <p>Deadline: {props.deadline}</p>

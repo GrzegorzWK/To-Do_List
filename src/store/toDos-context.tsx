@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren } from "react";
 import React, { useState } from "react";
 import ToDo from "../models/todo";
 
@@ -20,17 +20,20 @@ const ToDosContextProvider: React.FC<PropsWithChildren> = (props) => {
   const addToDoHandler = (toDoText: string, toDoDeadline: string) => {
     const newToDo = new ToDo(toDoText, toDoDeadline);
 
+    // push to local storage
     setToDos((prevToDos) => {
       return prevToDos.concat(newToDo);
     });
   };
 
+  //filter from local storage
   const removerToDoHandler = (toDoId: string) => {
     setToDos((prevToDos) => {
       return prevToDos.filter((toDo) => toDo.id !== toDoId);
     });
   };
 
+  //toDos from local storage
   const contextValue: ToDosContextObj = {
     items: toDos,
     addToDo: addToDoHandler,

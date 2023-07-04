@@ -7,12 +7,38 @@ const ToDoItem: React.FC<{
   deadline: string;
   onRemoveToDo: () => void;
 }> = (props) => {
+  const timeRemainingCalculation = (dateAdded: string, deadline: string) => {
+    return (
+      (new Date(deadline).getTime() - new Date(dateAdded).getTime()) /
+      (1000 * 3600 * 24)
+    );
+  };
+
+  const timeRemaining: number = timeRemainingCalculation(
+    props.dateAdded,
+    props.deadline
+  );
+
   return (
     <li onClick={props.onRemoveToDo} className={classes.item}>
       <p>Task title:</p>
-      <p>{props.text}</p>
-      <p>Date Added: {props.dateAdded}</p>
-      <p>Deadline: {props.deadline}</p>
+      <p>
+        <span className={classes.value}>{props.text}</span>
+      </p>
+      <p>
+        Date Added: <span className={classes.value}>{props.dateAdded}</span>
+      </p>
+      <p>
+        Days remaining:{" "}
+        <span
+          className={timeRemaining > 0 ? classes.value : classes.negativeValue}
+        >
+          {timeRemaining}
+        </span>
+      </p>
+      <p>
+        Deadline: <span className={classes.value}>{props.deadline}</span>
+      </p>
     </li>
   );
 };

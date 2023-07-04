@@ -15,7 +15,14 @@ class ToDo {
     const day = dateObj.getUTCDate();
     const year = dateObj.getUTCFullYear();
 
-    this.dateAdded = day + "-" + month + "-" + year;
+    this.dateAdded =
+      year +
+      "-" +
+      (month < 10 ? "0" : "") +
+      month +
+      "-" +
+      (day < 10 ? "0" : "") +
+      day;
   }
 }
 

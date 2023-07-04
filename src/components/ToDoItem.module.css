@@ -15,11 +15,18 @@
   justify-content: center;
   user-select: none;
   font-weight: bold;
-  color: black;
   flex-direction: column;
 }
 
 .item:hover {
   border: 1px solid #494844;
   transform: scale(1.05);
+}
+
+.value {
+  color: #ebb002;
+}
+
+.negativeValue {
+  color: #e02828;
 }

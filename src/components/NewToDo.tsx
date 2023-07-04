@@ -1,6 +1,8 @@
 import { useContext, useRef } from "react";
 import { ToDosContext } from "../store/toDos-context";
 
+import classes from "./NewTodo.module.css";
+
 const NewToDo: React.FC = () => {
   const toDosCtx = useContext(ToDosContext);
 
@@ -28,7 +30,7 @@ const NewToDo: React.FC = () => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} className={classes.form}>
       <label htmlFor="text">To Do Text</label>
       <input type="text" id="text" ref={toDoTextInputRef} />
       <label htmlFor="deadline">To Do Deadline</label>

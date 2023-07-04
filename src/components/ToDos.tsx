@@ -2,11 +2,13 @@ import { useContext } from "react";
 import ToDoItem from "./ToDoItem";
 import { ToDosContext } from "../store/toDos-context";
 
+import classes from "./ToDos.module.css"
+
 const ToDos: React.FC = () => {
   const toDosCtx = useContext(ToDosContext);
   
   return (
-    <ul>
+    <ul className={classes.toDoList}>
       {toDosCtx.items.map((item) => (
         <ToDoItem
           key={item.id}

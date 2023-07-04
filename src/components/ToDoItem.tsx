@@ -1,3 +1,5 @@
+import classes from "./ToDoItem.module.css";
+
 const ToDoItem: React.FC<{
   id: string;
   text: string;
@@ -6,8 +8,8 @@ const ToDoItem: React.FC<{
   onRemoveToDo: () => void;
 }> = (props) => {
   return (
-    <li onClick={props.onRemoveToDo}>
-      <p>{props.id}</p>
+    <li onClick={props.onRemoveToDo} className={classes.item}>
+      {/* <p>{props.id}</p> */}
       <p>{props.text}</p>
       <p>Date Added: {props.dateAdded}</p>
       <p>Deadline: {props.deadline}</p>

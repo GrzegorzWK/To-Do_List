@@ -15,8 +15,6 @@ const NewToDo: React.FC = () => {
     const enteredText = toDoTextInputRef.current!.value;
     const enteredDeadline = toDoDeadlineInputRef.current!.value;
 
-    console.log(typeof(enteredDeadline),enteredDeadline)
-
     if (
       enteredText.trim().length === 0 ||
       enteredDeadline.trim().length === 0
